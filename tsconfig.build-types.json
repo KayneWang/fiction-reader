@@ -1,0 +1,9 @@
+{
+  "include": ["lib/**/*"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "emitDeclarationOnly": true
+  }
+}

@@ -1,3 +1,72 @@
+<script setup lang="ts">
+
+import { ref } from 'vue'
+import Reader, { ReaderMode } from '../lib/reader.vue'
+import text from './content.txt?raw'
+
+const readerRef = ref<InstanceType<typeof Reader>>()
+
+const menuVisible = ref(false)
+
+const mode = ref<ReaderMode>('scroll')
+
+const content = ref<string>(text)
+
+const curPage = ref(0)
+
+const totalPage = ref(0)
+
+const fontSizeClass = ref('font-size-18')
+
+const lineHeightClass = ref('line-height-30')
+
+const paragraphGapClass = ref('paragraph-gap-20')
+
+const handleChangeMode = () => {
+  mode.value = mode.value === 'scroll'
+    ? 'pagination'
+    : 'scroll'
+}
+
+const handleChangeFontSize = () => {
+  fontSizeClass.value = fontSizeClass.value === 'font-size-18'
+    ? 'font-size-20'
+    : 'font-size-18'
+}
+
+const handleChangeLineHeight = () => {
+  lineHeightClass.value = lineHeightClass.value === 'line-height-30'
+    ? 'line-height-32'
+    : 'line-height-30'
+}
+
+const handleChangeParagraphGap = () => {
+  paragraphGapClass.value = paragraphGapClass.value === 'paragraph-gap-20'
+    ? 'paragraph-gap-22'
+    : 'paragraph-gap-20'
+}
+
+const handleMenuVisibleClick = () => {
+  menuVisible.value = !menuVisible.value
+}
+
+const handlePageChange = (page: number) => {
+  curPage.value = page
+}
+
+const handleTotalPageChange = (total: number) => {
+  totalPage.value = total
+}
+
+const handleNextClick = () => {
+  readerRef.value?.renderNextPageContent()
+}
+
+const handlePrevClick = () => {
+  readerRef.value?.renderPreviousPageContent()
+}
+</script>
+
 <template>
   <div class="preview">
     <div class="action-area" v-show="menuVisible">
@@ -107,6 +176,3 @@
         padding 0 20px
         box-sizing border-box
 </style>
-
-<script lang="ts" src="./App.ts">
-</script>

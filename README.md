@@ -18,6 +18,12 @@ or
 npm install @kaynewang/fiction-reader
 ```
 
+> Note: Remember import the style.css file in your root js/ts file.
+
+```ts
+import '@kaynewang/fiction-reader/style.css'
+```
+
 ## Properties
 
 | Name                | Description         | Default        |
