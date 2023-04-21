@@ -1,6 +1,6 @@
 {
   "name": "@kaynewang/fiction-reader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "files": [
     "dist",
     "README.md"
@@ -18,7 +18,11 @@
       "require": "./dist/style.css"
     }
   },
-  "keywords": ["vue", "vue3", "fiction-reader"],
+  "keywords": [
+    "vue",
+    "vue3",
+    "fiction-reader"
+  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
