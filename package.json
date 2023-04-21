@@ -2,7 +2,8 @@
   "name": "@kaynewang/fiction-reader",
   "version": "1.0.0",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "main": "./dist/fiction-reader.umd.js",
   "module": "./dist/fiction-reader.es.js",
@@ -12,6 +13,11 @@
       "import": "./dist/fiction-reader.es.js",
       "require": "./dist/fiction-reader.umd.js"
     }
+  },
+  "keywords": ["vue", "vue3", "fiction-reader"],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "repository": {
     "url": "https://github.com/KayneWang/fiction-reader"
@@ -24,7 +30,8 @@
     "dev": "vite",
     "build": "vite build && npm run build:types",
     "build:types": "vue-tsc --project tsconfig.build-types.json",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "vue": "^3.2.47"
