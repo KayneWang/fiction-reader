@@ -7,11 +7,15 @@
   ],
   "main": "./dist/fiction-reader.umd.js",
   "module": "./dist/fiction-reader.es.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/fiction-reader.es.js",
       "require": "./dist/fiction-reader.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "keywords": ["vue", "vue3", "fiction-reader"],
